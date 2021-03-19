@@ -17,9 +17,9 @@ mouse_pos = [0, 0]
 
 game_display = pygame.display.set_mode((x_resolution, y_resolution))
 pygame.display.set_caption('class testing')
-pygame.display.set_icon(pygame.image.load('B:\Coding\\tomboy_sprite_icon.jpg'))
+pygame.display.set_icon(pygame.image.load('tomboy_sprite.jpg'))
 
-tomboy_sprite = pygame.image.load('B:\Coding\\tomboy_sprite.jpg')
+tomboy_sprite = pygame.image.load('tomboy_sprite.jpg')
 img_width = 128
 
 font1 = "C:/Windows/Fonts/LBRITEDI.TTF"
