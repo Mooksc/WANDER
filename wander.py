@@ -22,9 +22,9 @@ pygame.display.set_icon(pygame.image.load('tomboy_sprite.jpg'))
 tomboy_sprite = pygame.image.load('tomboy_sprite.jpg')
 img_width = 128
 
-font1 = "C:/Windows/Fonts/LBRITEDI.TTF"
-font2 = "C:/Windows/Fonts/ALGER.TTF"
-font3 = "C:/Windows/Fonts/BAUHS93.TTF"
+font1 = "LBRITEDI.TTF"
+font2 = "ALGER.TTF"
+font3 = "BAUHS93.TTF"
 
 clock = pygame.time.Clock()
 clock.tick(60)
