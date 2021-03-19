@@ -196,12 +196,12 @@ def intro_loop():
     while True:
         
         for event in pygame.event.get():
-            if event.type is pygame.QUIT:
+            if event.type == pygame.QUIT:
                 quit()
-            if event.type is pygame.KEYDOWN:
-                if event.key is pygame.K_q:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_q:
                     quit()
-                if event.key is pygame.K_RETURN:
+                if event.key == pygame.K_RETURN:
                     game_loop_func()
 
         game_display.fill(black)
@@ -218,12 +218,12 @@ def pause_loop():
     while paused is True:
 
         for event in pygame.event.get():
-            if event.type is pygame.QUIT:
+            if event.type == pygame.QUIT:
                 quit()
-            if event.type is pygame.KEYDOWN:
-                if event.key is pygame.K_q:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_q:
                     intro_loop()
-                if event.key is pygame.K_p:
+                if event.key == pygame.K_p:
                     paused = False
 
         game_display.fill(black)
@@ -263,43 +263,43 @@ def game_loop_func():
     while game_sequence is True:
 
         for event in pygame.event.get():
-            if event.type is pygame.QUIT:
+            if event.type == pygame.QUIT:
                 quit()
 
-            if event.type is pygame.MOUSEMOTION:
+            if event.type == pygame.MOUSEMOTION:
                 mouse_pos = pygame.mouse.get_pos()
 
-            if event.type is pygame.KEYDOWN:
-                if event.key is pygame.K_d:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_d:
                     player_sprite_x_change = 5
-                if event.key is pygame.K_a:
+                if event.key == pygame.K_a:
                     if player_sprite.sprite_x > img_width * -.5:
                         player_sprite_x_change = -5
-                if event.key is pygame.K_SPACE:
+                if event.key == pygame.K_SPACE:
                     if Player_sprite.sprite_y > y_resolution - (img_width - 1):
                         player_sprite_y_change = -125
-                if event.key is pygame.K_r:
+                if event.key == pygame.K_r:
                     Player_sprite.sprite_x = x_resolution * 0
                     Player_sprite.sprite_y = y_resolution * .845
                     score = 0
-                if event.key is pygame.K_h:
+                if event.key == pygame.K_h:
                     if help_sequence is True:
                         help_sequence = False
                     else:
                         help_sequence = True
-                if event.key is pygame.K_p:                                                               
+                if event.key == pygame.K_p:                                                               
                     pause_loop()
-                if event.key is pygame.K_q:
+                if event.key == pygame.K_q:
                     exit_text = True
                     score = 0
-            if exit_text is True:
-                if event.type is quit_event:
+            if exit_text == True:
+                if event.type == quit_event:
                     game_sequence = False
 
-            if event.type is pygame.KEYUP:
-                if event.key is pygame.K_d:
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_d:
                     player_sprite_x_change = 0
-                if event.key is pygame.K_a:
+                if event.key == pygame.K_a:
                     player_sprite_x_change = 0
 
         Player_sprite.sprite_x += player_sprite_x_change
